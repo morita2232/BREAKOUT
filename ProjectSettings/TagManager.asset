@@ -8,6 +8,8 @@ TagManager:
   - BordeSuperior
   - BordeLateralIzquierdo
   - BordeLateralDerecho
+  - BordeInferior
+  - Bloque
   layers:
   - Default
   - TransparentFX

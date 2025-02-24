@@ -37,7 +37,13 @@ public class MovimientoPelota : MonoBehaviour
         }
         if (collision.gameObject.tag == "Pala")
         {
-            vertical *= -1f;
+            
+            Vector3 dir = transform.position - collision.transform.position;
+
+            dir.Normalize();
+
+            horizontal = dir.x;
+            vertical = dir.y;
         }
         
         if (collision.gameObject.tag == "BordeLateralIzquierdo")
@@ -48,11 +54,27 @@ public class MovimientoPelota : MonoBehaviour
         {            
             horizontal *= -1f;            
         } 
+        if(collision.gameObject.tag == "Bloque")
+        {
+           Vector3 dir = transform.position - collision.transform .position;
+
+            dir.Normalize();
+
+            horizontal = dir.x;
+            vertical = dir.y;
+
+            Destroy(collision.gameObject);
+        }
+        if(collision.gameObject.tag == "BordeInferior")
+        {
+            Spawn();
+        }
+
     }
 
     void Spawn()
     {
-        transform.position = new Vector3(0, 0, 0);
+        transform.position = new Vector3(0, (float)-1.50, 0);
 
         horizontal = Random.Range(-1f, 1f);
         if (horizontal < 0f) horizontal = -1f;
