@@ -10,6 +10,8 @@ TagManager:
   - BordeLateralDerecho
   - BordeInferior
   - Bloque
+  - PowerUp
+  - Clon
   layers:
   - Default
   - TransparentFX
