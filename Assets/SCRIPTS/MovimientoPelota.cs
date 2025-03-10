@@ -9,15 +9,18 @@ public class MovimientoPelota : MonoBehaviour
     float horizontal;
     float vertical;
     public GameObject[] powerups;
+    public GameObject[] powerball;
     public GameObject pelota;
     public int choice;
     public int randomNum;
     public Vector3 center;
+   public bool pelotaR = false;
 
     // Start is called before the first frame update
     void Start()
     {
         horizontal = Random.Range(-1f, 1f);
+        manager = FindAnyObjectByType<GameManager>();
         if (horizontal < 0f) horizontal = -1f;
         else horizontal = 1f;
         vertical = -1f;
@@ -70,9 +73,10 @@ public class MovimientoPelota : MonoBehaviour
 
             Destroy(collision.gameObject);
             PowerUps();
-            
-            if(collision.gameObject.name == "ladrilloB") { 
-            manager.score += 1;
+
+            if (collision.gameObject.name == "ladrilloB")
+            {
+                manager.score += 1;
             }
             if(collision.gameObject.name == "ladrilloM") { 
             manager.score += 2;
@@ -98,6 +102,7 @@ public class MovimientoPelota : MonoBehaviour
         {
             Spawn();
             manager.life--;
+
         }
 
     }
@@ -123,7 +128,11 @@ public class MovimientoPelota : MonoBehaviour
             choice = Random.Range(0, powerups.Length);
 
             Instantiate(powerups[choice], transform.position, Quaternion.identity);
-
+                               
+                if (transform.position.y <= -5.5f)
+                {
+                    Destroy(gameObject);                    
+                }            
         }
     }
 }
