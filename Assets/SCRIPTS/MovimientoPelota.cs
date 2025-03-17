@@ -6,15 +6,16 @@ public class MovimientoPelota : MonoBehaviour
 {
     public GameManager manager;
     public float speed;
-    float horizontal;
-    float vertical;
+    public float horizontal;
+    public float vertical;
     public GameObject[] powerups;
     public GameObject[] powerball;
     public GameObject pelota;
     public int choice;
     public int randomNum;
     public Vector3 center;
-   public bool pelotaR = false;
+    public bool pelotaR = false;
+    public Vector2 direction;
 
     // Start is called before the first frame update
     void Start()
@@ -135,4 +136,11 @@ public class MovimientoPelota : MonoBehaviour
                 }            
         }
     }
+
+    public void SetDirection(Vector2 newDirection)
+    {
+        direction = newDirection.normalized; // Normalize to ensure consistent speed
+        GetComponent<Rigidbody2D>().velocity = direction * speed;
+    }
+
 }
