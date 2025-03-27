@@ -171,5 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e927deafd6dd7945aee8c0f374f3c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pelota: {fileID: 0}
-  manager: {fileID: 0}
+  _pelota: {fileID: 7376461269912563806, guid: 25fe18d512ce120439a02a5d6344c06b, type: 3}
+  _manager: {fileID: 7350471611885024514, guid: 23a0f8785d5eb2843b17a78b5de1d64e, type: 3}

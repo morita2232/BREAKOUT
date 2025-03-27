@@ -37,8 +37,7 @@ public class MovimientoPelota : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Debug.Log(collision.gameObject.tag);
+    {        
 
         if (collision.gameObject.tag == "BordeSuperior")
         {
@@ -125,21 +124,21 @@ public class MovimientoPelota : MonoBehaviour
         center = new Vector3(0, (float)-1.50, 0);
 
         if (randomNum <= 10)
-        { 
+        {
             choice = Random.Range(0, powerups.Length);
 
             Instantiate(powerups[choice], transform.position, Quaternion.identity);
-                               
-                if (transform.position.y <= -5.5f)
-                {
-                    Destroy(gameObject);                    
-                }            
+
+            if (transform.position.y <= -5.5f)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
     public void SetDirection(Vector2 newDirection)
     {
-        direction = newDirection.normalized; // Normalize to ensure consistent speed
+        direction = newDirection.normalized; 
         GetComponent<Rigidbody2D>().velocity = direction * speed;
     }
 

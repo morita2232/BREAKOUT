@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5706098798364839584
+--- !u!1 &2235643509731857717
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2495074726548557697}
-  - component: {fileID: 3383934706285424966}
-  - component: {fileID: 5965974451516565821}
-  - component: {fileID: 8104844107676025965}
-  - component: {fileID: -4874119781143490198}
+  - component: {fileID: 7846019290538742359}
+  - component: {fileID: 3545125599607731974}
+  - component: {fileID: 7376461269912563806}
+  - component: {fileID: 2868066005988229855}
+  - component: {fileID: 2143620905853828129}
   m_Layer: 0
-  m_Name: PowerUpAzul
-  m_TagString: PowerUp
+  m_Name: Pelota
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2495074726548557697
+--- !u!4 &7846019290538742359
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5706098798364839584}
+  m_GameObject: {fileID: 2235643509731857717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.64, y: -1.8864424, z: 0}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3383934706285424966
+--- !u!212 &3545125599607731974
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5706098798364839584}
+  m_GameObject: {fileID: 2235643509731857717}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.1812067, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -87,13 +87,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5965974451516565821
+--- !u!114 &7376461269912563806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2235643509731857717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c10f7fa36c82749b083d9883b776f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 7350471611885024514, guid: 23a0f8785d5eb2843b17a78b5de1d64e, type: 3}
+  speed: 5
+  horizontal: 0
+  vertical: 0
+  powerups:
+  - {fileID: 4571566690759359807, guid: 0b1447fb86f7a1046a3d94a416fb542a, type: 3}
+  - {fileID: 5706098798364839584, guid: ddccad2489e24c143a2e8d3740f56fa1, type: 3}
+  - {fileID: 6940889520490656023, guid: 2fd16d17a4a91244aa2df4f9dbbc8971, type: 3}
+  powerball:
+  - {fileID: 3402436199387730147, guid: 8dcc3edccdc916c45a0c6e038ee56bbb, type: 3}
+  - {fileID: 3402436199387730147, guid: 44e50805d4413c848a57dc359d6352bf, type: 3}
+  - {fileID: 3402436199387730147, guid: dbf78a1e5e2574549b885b756c454998, type: 3}
+  pelota: {fileID: 2235643509731857717}
+  choice: 0
+  randomNum: 0
+  center: {x: 0, y: 0, z: 0}
+  pelotaR: 0
+  direction: {x: 0, y: 0}
+--- !u!61 &2868066005988229855
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5706098798364839584}
+  m_GameObject: {fileID: 2235643509731857717}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -132,15 +162,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &8104844107676025965
+--- !u!50 &2143620905853828129
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5706098798364839584}
-  m_BodyType: 0
+  m_GameObject: {fileID: 2235643509731857717}
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -159,17 +189,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-4874119781143490198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5706098798364839584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92e15e97a1d0f894ba175b984b2bd81a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pelota: {fileID: 7376461269912563806, guid: 25fe18d512ce120439a02a5d6344c06b, type: 3}
-  _manager: {fileID: 7350471611885024514, guid: 23a0f8785d5eb2843b17a78b5de1d64e, type: 3}

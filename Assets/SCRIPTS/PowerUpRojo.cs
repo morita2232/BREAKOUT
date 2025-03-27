@@ -76,6 +76,8 @@ Destroy(gameObject);
 
 }
 */
+
+/*
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -108,22 +110,22 @@ public class PowerUps : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Pala"))
         {
-            if (pelota.choice == 0) // Power-up Rojo (Red Power-up)
+            if (pelota.choice == 0)
             {
                 manager.life++;
                 Instantiate(pelota.powerball[0], pelota.center, Quaternion.identity);
                 Destroy(gameObject);
             }
-            else if (pelota.choice == 1) // Power-up Azul (Blue Power-up)
+            else if (pelota.choice == 1)
             {
-                balls = FindObjectsOfType<MovimientoPelota>(); // Refresh ball list
+                balls = FindObjectsOfType<MovimientoPelota>();
                 ballCount = balls.Length;
 
                 for (int i = 0; i < ballCount; i++)
                 {
                     GameObject newBall = Instantiate(pelota.powerball[1], balls[i].transform.position, Quaternion.identity);
 
-                    // Copy velocity from the original ball
+                   
                     MovimientoPelota newBallScript = newBall.GetComponent<MovimientoPelota>();
                     if (newBallScript != null)
                     {
@@ -133,10 +135,10 @@ public class PowerUps : MonoBehaviour
                 manager.life += ballCount;
                 Destroy(gameObject);
             }
-            else if (pelota.choice == 2) // Power-up Verde (Green Power-up)
+            else if (pelota.choice == 2) 
             {
-                float angleStep = 30f; // Angle between each ball in the arc
-                float startAngle = -angleStep; // Start angle for the arc
+                float angleStep = 30f;
+                float startAngle = -angleStep;
                 
 
                 for (int i = 0; i < 3; i++)
@@ -146,7 +148,7 @@ public class PowerUps : MonoBehaviour
 
                     GameObject newBall = Instantiate(pelota.powerball[2], pelota.center * i, Quaternion.identity);
 
-                    // Apply velocity to the new ball
+                    
                     MovimientoPelota newBallScript = newBall.GetComponent<MovimientoPelota>();
                    
                 }
@@ -156,4 +158,40 @@ public class PowerUps : MonoBehaviour
         }
     }
 }
+ */
+using UnityEngine;
 
+public class PowerUpRojo : MonoBehaviour
+{
+
+    public MovimientoPelota _pelota;
+    public GameManager _manager;
+
+    void Start()
+    {
+        _pelota = FindObjectOfType<MovimientoPelota>();
+        _manager = FindObjectOfType<GameManager>();
+    }
+
+     void Update()
+    {
+        
+        if (transform.position.y <= -6f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Pala"))
+        {
+            Instantiate(_pelota.powerball[0], _pelota.center, Quaternion.identity);
+            _manager.life++;
+            Destroy(gameObject);
+        }       
+
+    }
+
+
+}

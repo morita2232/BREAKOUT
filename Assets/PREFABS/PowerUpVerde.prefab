@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 218180492483291915}
   - component: {fileID: 6578578267421918745}
   - component: {fileID: 3577828587155636558}
-  - component: {fileID: 3900825347200404220}
+  - component: {fileID: 1874217082346356159}
   m_Layer: 0
   m_Name: PowerUpVerde
   m_TagString: PowerUp
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3900825347200404220
+--- !u!114 &1874217082346356159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,8 +168,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6940889520490656023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e927deafd6dd7945aee8c0f374f3c93, type: 3}
+  m_Script: {fileID: 11500000, guid: 8aadc55e8eaa6b44284c4b56cd61bb1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pelota: {fileID: 0}
-  manager: {fileID: 0}
+  _pelota: {fileID: 7376461269912563806, guid: 25fe18d512ce120439a02a5d6344c06b, type: 3}
+  _manager: {fileID: 7350471611885024514, guid: 23a0f8785d5eb2843b17a78b5de1d64e, type: 3}
