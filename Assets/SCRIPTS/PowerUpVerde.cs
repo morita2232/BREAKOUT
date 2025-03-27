@@ -3,7 +3,7 @@ using UnityEngine;
 public class PowerUpVerde : MonoBehaviour
 {
     public MovimientoPelota _pelota;
-    public GameManager _manager;
+    private GameManager _manager;
     [SerializeField] private float spreadAngle = 30f;
 
     private void Start()
@@ -22,17 +22,19 @@ public class PowerUpVerde : MonoBehaviour
         {
             originalSpeed = originalRb.velocity.magnitude;
         }
+        
 
         CreateBall(0f, originalSpeed);      
         CreateBall(-spreadAngle, originalSpeed);
         CreateBall(spreadAngle, originalSpeed); 
 
-        _manager.life += 3;
         Destroy(gameObject);
     }
 
     private void CreateBall(float angleOffset, float speed)
     {
+        _manager.life++;
+
         float angle = 90f + angleOffset;
         Vector2 direction = new Vector2(
             Mathf.Sin(angle * Mathf.Deg2Rad),

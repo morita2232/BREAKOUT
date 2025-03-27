@@ -6,9 +6,6 @@ public class PowerUpAzul : MonoBehaviour
     private GameManager _manager;
     private bool _activated = false;
 
-    [Header("Settings")]
-    [SerializeField] private int livesPerBall = 1;
-
     void Start()
     {
         _pelota = FindObjectOfType<MovimientoPelota>();
@@ -33,6 +30,8 @@ public class PowerUpAzul : MonoBehaviour
                 Quaternion.identity
             );
 
+            _manager.life++;
+
             if (ball.TryGetComponent<Rigidbody2D>(out var originalRb) &&
                 newBall.TryGetComponent<Rigidbody2D>(out var newRb))
             {
@@ -40,7 +39,6 @@ public class PowerUpAzul : MonoBehaviour
             }
         }
         
-        _manager.life += ballsToCreate * livesPerBall;
 
         Destroy(gameObject);
     }
